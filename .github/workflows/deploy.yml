@@ -91,3 +91,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy .vercel/output/static --project-name=homepage-builder-sites
           workingDirectory: packages/site-renderer
+          packageManager: pnpm
