@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "rootDirectory": "packages/editor-app",
+  "installCommand": "cd ../.. && pnpm install",
+  "buildCommand": "cd ../.. && pnpm turbo build --filter=editor-app...",
+  "outputDirectory": "packages/editor-app/.next",
+  "ignoreCommand": "npx turbo-ignore editor-app"
+}

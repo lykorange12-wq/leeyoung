@@ -1,0 +1,11 @@
+name = "homepage-builder-domain-router"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# 커스텀 도메인을 갖는 사이트들의 요청을 처리
+# 각 고객 도메인마다 이 Worker를 CNAME/A 레코드로 연결
+
+[vars]
+# site-renderer 배포 URL (Cloudflare Pages URL)
+SITE_RENDERER_URL = "https://homepage-builder-sites.pages.dev"
