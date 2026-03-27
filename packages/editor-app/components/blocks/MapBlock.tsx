@@ -35,7 +35,7 @@ declare global {
 
 function KakaoMapEmbed({ address }: { address: string }) {
   const mapRef = useRef<HTMLDivElement>(null)
-  const mapKey = process.env.NEXT_PUBLIC_KAKAO_MAP_KEY
+  const mapKey = process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY
 
   useEffect(() => {
     if (!mapKey || !address || !mapRef.current) return
@@ -69,7 +69,7 @@ function KakaoMapEmbed({ address }: { address: string }) {
   }, [address, mapKey])
 
   if (!mapKey) {
-    // NEXT_PUBLIC_KAKAO_MAP_KEY 없을 때 폴백
+    // NEXT_PUBLIC_KAKAO_MAP_API_KEY 없을 때 폴백
     return (
       <div className="w-full aspect-video bg-gray-100 rounded-xl flex items-center justify-center">
         <a
