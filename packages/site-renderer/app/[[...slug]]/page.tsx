@@ -1,4 +1,5 @@
 // Design Ref: §6.2 — site-renderer: 발행된 사이트 동적 렌더링
+export const runtime = 'edge'
 // 커스텀 도메인: Cloudflare Worker → x-custom-domain 헤더 → loadSiteByCustomDomain
 // 서브도메인: /{subdomain} 경로 → loadSiteBySubdomain
 import { notFound } from 'next/navigation'
