@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "pnpm turbo build --filter=editor-app...",
+  "outputDirectory": "packages/editor-app/.next",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "ignoreCommand": "npx turbo-ignore editor-app"
+}
