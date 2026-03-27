@@ -84,6 +84,12 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_KAKAO_MAP_API_KEY: ${{ secrets.NEXT_PUBLIC_KAKAO_MAP_API_KEY }}
           NEXT_PUBLIC_BUILDER_URL: ${{ secrets.NEXT_PUBLIC_BUILDER_URL }}
+      - name: Create Pages project if not exists
+        working-directory: packages/site-renderer
+        run: pnpm exec wrangler pages project create homepage-builder-sites --production-branch=main || true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
